@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container
+        {
+            background-color:plum;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -12,8 +18,15 @@
         <h1 class="heading" id="heading3">3</h1>
         <h1 class="heading" id="heading4">4</h1>
     </div>
+    <button onclick="changeColor()"></button>
     <script>
-        
+        function changeColor()
+        {
+            const container=document.querySelector(".container");
+            container.lastElementChild.style.backgroundColor="yellow"
+             container.firstElementChild.style.backgroundColor="red"
+        }
+
     </script>
 </body>
 </html>
