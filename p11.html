@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        background-color: plum;
+        height: 400px;
+        width:400px;
+    }
+
+   </style>
+<body>
+    <div class="container"></div>
+    <button onclick="display()">Click here</button>
+    <button onclick="circle()">circle</button>
+    <script>
+        function display()
+        {
+            document.querySelector(".container").innerHTML="<h1>Hello</h>"
+        }
+        function circle()
+        {
+            document.querySelector(".container").style.borderRadius="100%";
+        }
+    </script>
+   
+
+</body>
+</html>
