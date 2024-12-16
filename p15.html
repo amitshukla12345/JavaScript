@@ -8,26 +8,30 @@
 <style>
     #container
     {
-        border:2px solid black;
+        border:2px solid red;
         height: 100px;
         width:100px;
         
     }
 </style>
 <body>
-    <div id="container"></div>
+    <div id="container" class="A"></div>
     <script>
         
-        /*const container=document.getElementById("container");
-        container.addEventListener("click",function(){
-            container.style.backgrouondColor="green";
-        });*/
+        const container=document.getElementById("container");
+        container.addEventListener("click",(event)=>{
+            event.target.style.backgroundColor="green";
+            console.log(event.target.className);
+        });
 
-        const printName= (name)=>"Hello"+name;
+      /*  const printName= (name)=>"Hello"+name;
         alert(printName("amit"));
 
         const square=(n) => n*n;
         alert(square(6));
+
+        const printHello=()=>document.write("Hello");
+        printHello();*/
     </script>
     
 </body>
