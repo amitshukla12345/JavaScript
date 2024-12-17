@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container
+        {
+            background-color: yellow;
+            height: 400px;
+            padding: 20px;
+        }
+        #box
+        {
+            background-color: greenyellow;
+            height: 250px;
+            width:80%;
+            padding:10px;
+            
+        }
+        #Heading
+        {
+            border:2px solid red;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="box">
+
+            <h1 id="Heading">Heading</h1>
+
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("container").addEventListener("click",(e)=>{
+            e.stopPropagation()
+            alert("container");
+            
+        })
+        document.getElementById("box").addEventListener("click",(e)=>{
+          
+            e.stopPropagation()
+            alert("box");
+        })
+        document.getElementById("Heading").addEventListener("click",(e)=>{
+            e.stopPropagation();//stopPropagation is use to stop propagation 
+            alert("Heading");
+            
+        })
+        
+
+    </script>
+
+</body>
+</html>
