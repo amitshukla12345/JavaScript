@@ -37,8 +37,11 @@
     </div>
     <hr>
     <a href="https://www.google.com/"id="link">Google</a>
-    <form action="">
-        <input type="text">
+
+    <form action=""onsubmit=""id="form">
+
+        <input type="text" name="username">
+        <input type="text" name="age">
         <input type="submit" value="submit">
 
 
@@ -48,21 +51,30 @@
     <script>
 
         document.getElementById("container").addEventListener("click",(e)=>{
-            e.stopPropagation()
+           // e.stopPropagation()
             alert("container");
             
-        })
+        },true)
         document.getElementById("box").addEventListener("click",(e)=>{
           
-            e.stopPropagation()
+            //e.stopPropagation()
             alert("box");
-        })
+        },true)
         document.getElementById("Heading").addEventListener("click",(e)=>{
             e.stopPropagation();//stopPropagation is use to stop propagation 
             alert("Heading");
             
         })
-        
+        document.getElementById("link").addEventListener("click",(event)=>{
+            //event.preventDefault();
+        },true)
+
+       document.getElementById("form").addEventListener("submit",(event)=>{
+        event.preventDefault();
+        console.log(event.target.username.value);
+        console.log(event.target.age.value);
+
+       })
 
     </script>
 
