@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const product={
+            productId:101,
+            productName:"Laptop",
+            productPrice:45000,
+            details:function(){
+                return this.productId+" "+this.productName;
+            },
+            discount:function(){
+                return this.productPrice*0.3;
+            },
+            demo:function(name)
+            {
+                return "My name is"+name
+            }
+
+
+        }
+    </script>
+</body>
+</html>
