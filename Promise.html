@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //promise: either it will resolved, either it will rejected ether it will pending
+        //server se data humesha milta hai aisa nahi isliy promise aaya 
+
+        const promise = new Promise(function(resolved,reject){
+            let status=false;
+            if(status)
+            resolved("success");
+        else
+        reject("fail");
+
+        });
+
+        promise.catch((data)=>{alert(data)});
+    </script>
+</body>
+</html>
