@@ -2,12 +2,24 @@ fetch("http://localhost:8080/products")
 .then(data=>data.json())
 .then(data=>{
     console.log(data);
-    document.write(`<p>number :${data["page"]["number"]}</p>`)
-    Document.write(`<p>totalPages :${data["page"]["totalPages"]}</p>`)
-    data["_embedded"]["products"].forEach(product=>{
-        document.write(`<h1>${product["productName"]}</h1>`)
-        document.write(`<p>${product["_links"]["self"]["href"]}</p>`)
+    data["_embedded"]["products"].forEach((product)=>{
+        console.log(product);
+        //console.log(product)
+        const a=document.createElement("a");
+        a.textContent=product["productName"];
+        document.body.appendChild(a);
 
+        //setAttribute is js metod which will help you
+        console.log(product["_links"]["self"]["href"]);
 
-    });
+        //setAttribute is a method attribute ka name dena hai
+        a.setAttribute("href",product["_links"]["self"]["href"]);
+
+        a.addEventListener("click",(event)=>{
+            event.preventDefault()// to stop new page
+            fetch(product["_links"]["self"]["href"],{method:"DELETE"})
+            .then(data=>data.json())
+            .then(data=>console.log("deleted product"+data))
+        })
+    })
 })
